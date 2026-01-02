@@ -1,0 +1,9 @@
+# MySQLのデータ実体（巨大かつ環境依存するため除外）
+mysql_data/
+
+# パスワード等を除外
+.env
+
+# OSが自動生成する一時ファイル（Mac/Windows混在対策）
+.DS_Store
+Thumbs.db

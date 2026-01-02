@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  # rootユーザーのパスワード
+      MYSQL_DATABASE: my_database        # 初回起動時に作成されるDB名
+      MYSQL_USER: ${MYSQL_USER}                  # 一般ユーザー名
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}      # 一般ユーザーのパスワード
+    ports:
+      - "3306:3306"                      # ローカルの3306番をコンテナの3306番に繋ぐ
+    volumes:
+      - ./mysql_data:/var/lib/mysql      # データをローカルに保存（永続化）
